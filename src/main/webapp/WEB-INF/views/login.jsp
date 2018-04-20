@@ -30,6 +30,8 @@
 		<c:if test="${response.logout != null}">
 			<p style="color : red;">${response.logout}</p>
 		</c:if>
+		
+		<button type="submit" class="btn">Log in</button>
 	</form>
 </body>
 </html>

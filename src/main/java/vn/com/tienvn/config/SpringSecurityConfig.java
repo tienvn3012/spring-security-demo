@@ -17,10 +17,14 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter implement
 		super.configure(http);
 		
 		http
-		.authorizeRequests().anyRequest().authenticated()
+		.authorizeRequests()
+			.antMatchers("/resources/**").permitAll()
+			.antMatchers("/home/**").permitAll()
+			.anyRequest().authenticated()
 		.and()
 			.formLogin()
 				.loginPage("/login")
+				.permitAll()
 		.and()
 			.httpBasic()
 		.and()
